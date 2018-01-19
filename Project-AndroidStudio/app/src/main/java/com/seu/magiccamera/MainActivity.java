@@ -11,6 +11,7 @@ import android.support.v4.content.PermissionChecker;
 import android.util.Log;
 import android.view.View;
 
+import com.seu.magiccamera.activity.AlbumActivity;
 import com.seu.magiccamera.activity.CameraActivity;
 
 import java.io.File;
@@ -36,6 +37,12 @@ public class MainActivity extends Activity {
                 }
             }
         });
+        findViewById(R.id.button_album).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(v.getId());
+            }
+        });
     }
 
     @Override
@@ -52,6 +59,9 @@ public class MainActivity extends Activity {
         switch (id) {
             case R.id.button_camera:
                 startActivity(new Intent(this, CameraActivity.class));
+                break;
+            case R.id.button_album:
+                startActivity(new Intent(this, AlbumActivity.class));
                 break;
             default:
                 break;
